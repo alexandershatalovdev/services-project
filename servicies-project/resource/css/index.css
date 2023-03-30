@@ -1,0 +1,387 @@
+/* ------------- variables  ---------- */
+:root {
+  --bg: #f8f8f8;
+  --font: #1b1c21;
+  --button: #ff3e79;
+  --text-muted: #7e7e82;
+  --highlight: #41f6d7;
+}
+
+/* ------------------------ fonts --------------- */
+
+/* regular */
+@font-face {
+  font-family: "TT Lakes Regular";
+  src: url("../fonts/TTLakes/eot/TTLakes-Regular.eot");
+  src: url("TTLakes-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/TTLakes/woff/TTLakes-Regular.woff") format("woff"),
+    url("../fonts/TTLakes/ttf/TTLakes-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* bold */
+@font-face {
+  font-family: "TT Lakes Bold";
+  src: url("../fonts/TTLakes/eot/TTLakes-Bold.eot");
+  src: url("TTLakes-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/TTLakes/woff/TTLakes-Bold.woff") format("woff"),
+    url("../fonts/TTLakes/ttf/TTLakes-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ---------------- base styles --------------- */
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  font-family: "TT Lakes Regular", Arial, sans-serif;
+}
+
+/* ------------ mobile styles - 320px ------------------- */
+
+.container {
+  background: var(--bg);
+}
+
+/* NAV  */
+.header {
+  background: #fff;
+  padding: 18.59px 16px;
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__item {
+  margin-right: 16px;
+}
+
+.nav__item:last-child {
+  margin-right: 0;
+}
+
+.nav__container--end-parent {
+  display: flex;
+}
+
+.nav__container--start-md,
+.nav__container--end-md {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.nav__divider--last {
+  margin: 0 0.8em;
+}
+
+.nav__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--button);
+  border: none;
+  cursor: pointer;
+}
+
+.nav__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.nav__container--center-md,
+.nav__divider--first {
+  display: none;
+}
+/* NAV */
+
+/* BUTTONS CONTENT */
+.content__header {
+  margin: 24px 0;
+}
+
+.content__highlight {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.content__title {
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  font-family: "TT Lakes Bold", Arial, sans-serif;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.content__list {
+  margin: 0 16px;
+  display: flex;
+  flex-flow: row wrap;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  justify-content: space-between;
+  height: 40px;
+  overflow: hidden;
+  /* IF NEED SCROLLBAR FOR THE REST OF THE ITEMS:
+  overflow: auto; */
+}
+
+.content__button,
+a {
+  color: var(--text-muted);
+}
+
+.content__button {
+  border: none;
+  text-decoration: none;
+  background-color: var(--bg);
+  box-sizing: border-box;
+  height: 40px;
+  margin: 0 5px 0 0;
+}
+
+.content__button:last-child {
+  margin-right: 0;
+}
+
+/* in real life I would also add these styles to  .content__button:hover */
+.content__button--active {
+  border: 2px solid var(--highlight);
+  border-radius: 6px;
+  background-color: white;
+  color: var(--text-muted);
+  line-height: 24px;
+  padding: 8px 9.3px 8px 16.54px;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+}
+
+.content__buttons-container {
+  display: none;
+}
+/* BUTTONS CONTENT */
+
+/* ABOUT SECTION with text and img */
+.about__article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* adds space between the divs */
+  align-items: center; /* centers the divs vertically */
+}
+
+.about__article-container {
+  margin: 24px 16px 16px;
+  width: 100%;
+}
+
+.about__article-text {
+  height: 90px;
+  overflow: hidden;
+  line-height: 18px;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  color: var(--font);
+  margin-bottom: 16px;
+}
+
+.about-read-more__link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--font);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.about-read-more__expand-icon {
+  margin-right: 16px;
+}
+/* ABOUT SECTION with text and img */
+
+/* --------------- tablet styles ------------------------- */
+@media screen and (min-width: 768px) {
+  /* NAV  */
+  .header {
+    padding: 18.59px 24px;
+  }
+
+  .nav__list {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__divider--first {
+    display: flex;
+    margin: 0 0.8em;
+  }
+
+  .nav__container--center-md {
+    display: flex;
+  }
+  /* NAV  */
+
+  /* BUTTONS CONTENT */
+  .content__list {
+    /* margin: 0 0 0 24px; */
+    margin: 0 25px 0 24px;
+  }
+
+  .content__highlight {
+    margin-right: 20px;
+  }
+  /* BUTTONS CONTENT */
+
+  /* ABOUT SECTION with text and img */
+  .about__article {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 40px 25px 40px 24px;
+  }
+
+  .about__article-text {
+    height: 160px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* for width were 50/50 for text and img*/
+  .about__article-container,
+  .about__image-container {
+    margin: 0;
+    width: calc(50% - 24px);
+    align-self: flex-start; /* position to the top */
+  }
+
+  /* Pixel perfect width */
+  /* .about__article-container {
+    margin: 0;
+    width: 43.3%;
+  }
+  .about__image-container {
+    width: calc(56.7% - 48px);
+    margin-left: 48px;
+  } */
+  /* Pixel perfect width */
+  /* ABOUT SECTION with text and img */
+}
+
+/*--------------- desktop styles ------------------------ */
+@media screen and (min-width: 1120px) {
+  /* NAV */
+  .nav__container--start-md,
+  .nav__container--center-md,
+  .nav__divider--last,
+  .header {
+    display: none;
+  }
+  /* NAV */
+
+  /* BUTTONS CONTENT */
+  .content__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 42px 30px 0 0;
+  }
+
+  .content__buttons-container {
+    display: flex;
+  }
+
+  .content__buttons-list {
+    display: flex;
+  }
+
+  .content__highlight {
+    margin-right: 30px;
+  }
+
+  .content__list {
+    /* AS IN FIGMA, but I have no overflow */
+    /* margin: 8.37px 28.65px 14.38px 32px; */
+    margin: 8.37px 28.65px 57.85px 32px;
+  }
+
+  .content__nav-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .content__nav-item--last {
+    margin-left: 32px;
+  }
+
+  .content__nav-text {
+    margin-right: 10px;
+    font-family: "TT Lakes Bold", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  /* BUTTONS CONTENT */
+
+  /* ABOUT SECTION with text and img */
+  .about__article {
+    align-items: flex-start; /* align to the top */
+    flex-wrap: wrap;
+    margin: 10px 28.65px 49px 34px;
+  }
+
+  .about__article-text {
+    margin-bottom: 13.78px;
+  }
+  /* ABOUT SECTION with text and img */
+}
+
+/*---------------XL desktop styles ------------------------ */
+@media screen and (min-width: 1121px) {
+  /* ABOUT SECTION with text and img */
+
+  .about__article {
+    margin: 60px 70px 50px;
+  }
+
+  .about__article-container {
+    align-self: flex-start;
+    margin-right: 20px;
+  }
+
+  .about__image {
+    margin: 0 auto;
+  }
+
+  .about__article-text {
+    margin-bottom: 20px;
+  }
+
+  .about__text--second {
+    margin-top: 20px;
+  }
+  /* ABOUT SECTION with text and img */
+
+  /* BUTTONS CONTENT */
+  .content__header {
+    margin-right: 70px;
+  }
+  .content__list {
+    margin: 20px 70px 50px;
+    overflow: visible;
+    justify-content: flex-start;
+  }
+
+  .content__item {
+    margin: 0 5% 0 0;
+  }
+
+  .content__highlight {
+    margin-right: 66px;
+  }
+  /* BUTTONS CONTENT */
+}

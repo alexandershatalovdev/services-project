@@ -1,0 +1,92 @@
+/* ------------- reset ----------------- */
+/* box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* set core body defaults and typographic tweaks */
+body {
+  height: 100%;
+  min-height: -webkit-fill-available;
+  text-rendering: optimizeSpeed;
+  line-height: calc(1em + 0.5rem);
+  -webkit-font-smoothing: antialiased;
+  /* line-height: 1.5;   messes it up for the h elements*/
+}
+
+/* set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* inherit fonts for inputs and buttons and avoid auto-zoom behavior */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  /* hyphens: auto;  no hyphens in our Figma project*/
+}
+
+/* create a root stacking context - I don't use JS or React - no need for it */
+/* #root,
+#__next {
+  isolation: isolate;
+} */
+
+/* remove default text and link styles */
+body,
+p,
+a,
+ul,
+li {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+
+/* remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
